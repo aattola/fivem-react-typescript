@@ -23,7 +23,7 @@ RegisterCommand(
   false,
 )
 
-RegisterNuiCB('closeMenu', (cb) => {
+RegisterNuiCB('closeMenu', (_, cb) => {
   SetNuiFocus(false, false)
   SendNUIMessage({
     action: 'closePage',
@@ -35,7 +35,7 @@ RegisterNuiCB('closeMenu', (cb) => {
   cb(true)
 })
 
-RegisterNuiCB('getDemoData', (cb) => {
+RegisterNuiCB('getDemoData', (data, cb) => {
   console.log(data)
 
   cb({ demo: true, inBrowser: false })
