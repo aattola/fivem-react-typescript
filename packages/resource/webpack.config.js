@@ -13,7 +13,7 @@ const client = {
         loader: 'esbuild-loader',
         options: {
           loader: 'tsx', // Or 'ts' if you don't need tsx
-          target: 'es2015',
+          target: 'es2022',
         },
         exclude: /node_modules/,
       },
@@ -30,6 +30,9 @@ const client = {
     filename: 'client.js',
     path: path.resolve(clientBuild),
   },
+  experiments: {
+    topLevelAwait: true,
+  },
 }
 
 const server = {
@@ -43,7 +46,7 @@ const server = {
         loader: 'esbuild-loader',
         options: {
           loader: 'tsx', // Or 'ts' if you don't need tsx
-          target: 'es2015',
+          target: 'es2022',
         },
         exclude: /node_modules/,
       },
@@ -59,6 +62,9 @@ const server = {
   output: {
     filename: 'server.js',
     path: path.resolve(serverBuild),
+  },
+  experiments: {
+    topLevelAwait: true,
   },
 }
 

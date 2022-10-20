@@ -1,10 +1,12 @@
-RegisterCommand(
-  'testworking',
-  () => {
-    console.log('works!')
-  },
-  false,
-)
+import { ClientUtils, RegisterNuiCB } from '@project-error/pe-utils'
+
+const rpc = new ClientUtils()
+
+const res = await rpc.emitNetPromise('test', {
+  hello: 'from client',
+})
+
+console.log(res)
 
 RegisterCommand(
   'nuitest',
@@ -21,8 +23,7 @@ RegisterCommand(
   false,
 )
 
-RegisterNuiCallbackType('closeMenu')
-on('__cfx_nui:closeMenu', (_: any, cb: (responseData: any) => void) => {
+RegisterNuiCB('closeMenu', (cb) => {
   SetNuiFocus(false, false)
   SendNUIMessage({
     action: 'closePage',
@@ -30,11 +31,11 @@ on('__cfx_nui:closeMenu', (_: any, cb: (responseData: any) => void) => {
       pageName: 'HelloWorld',
     },
   })
+
   cb(true)
 })
 
-RegisterNuiCallbackType('getDemoData')
-on('__cfx_nui:getDemoData', (data: any, cb: (responseData: any) => void) => {
+RegisterNuiCB('getDemoData', (cb) => {
   console.log(data)
 
   cb({ demo: true, inBrowser: false })
