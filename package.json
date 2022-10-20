@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "watch": "lerna run watch --stream --parallel",
+    "watch:web": "lerna run watch:web --stream --parallel",
     "build": "lerna run build --stream --parallel"
   },
   "devDependencies": {
