@@ -2,18 +2,16 @@
   "name": "resource",
   "version": "1.0.0",
   "main": "index.js",
-  "private":  true,
+  "private": true,
   "license": "MIT",
   "dependencies": {
     "@project-error/pe-utils": "^0.3.0",
-    "clean-webpack-plugin": "^4.0.0",
-    "esbuild-loader": "^2.20.0",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "esbuild": "^0.15.13",
+    "esbuild-plugin-fileloc": "^0.0.6"
   },
   "scripts": {
-    "watch:web": "webpack --mode development --watch",
-    "watch": "webpack --mode development --watch",
-    "build": "webpack --mode production"
+    "watch:web": "node scripts/watch.js",
+    "watch": "node scripts/watch.js",
+    "build": "node scripts/build.js"
   }
 }

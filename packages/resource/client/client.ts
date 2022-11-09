@@ -2,11 +2,13 @@ import { ClientUtils, RegisterNuiCB } from '@project-error/pe-utils'
 
 const rpc = new ClientUtils()
 
-const res = await rpc.emitNetPromise('test', {
-  hello: 'from client',
-})
+async function main() {
+  const res = await rpc.emitNetPromise('test', {
+    hello: 'from client',
+  })
 
-console.log(res)
+  console.log(res)
+}
 
 RegisterCommand(
   'nuitest',
@@ -40,3 +42,5 @@ RegisterNuiCB('getDemoData', (data, cb) => {
 
   cb({ demo: true, inBrowser: false })
 })
+
+main()

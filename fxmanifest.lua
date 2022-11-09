@@ -5,9 +5,9 @@ author 'JEFFe'
 description 'ts react prettier eslint fivem'
 version '1.0.0'
 
-client_script 'packages/resource/dist/client/*.js'
+client_script 'packages/resource/dist/client.js'
 
-server_script 'packages/resource/dist/server/*.js'
+server_script 'packages/resource/dist/server.js'
 
 files {
   'packages/ui/dist/index.html',
