@@ -18,6 +18,7 @@ build({
   bundle: true,
   minify: false,
   sourcemap: 'inline',
+  watch: true,
   outfile: './dist/client.js',
   entryPoints: ['./client/client.ts'],
   platform: 'browser',
